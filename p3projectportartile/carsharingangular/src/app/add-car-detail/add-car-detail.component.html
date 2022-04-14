@@ -1,0 +1,42 @@
+    <div class="layout-padded">
+    <p>&nbsp;&nbsp;&nbsp;</p>
+    <h2 class="display-1" style="font-size: 45px;">Eccoti la lista di tutti i parcheggi ed il loro numero di auto.</h2>
+    <p>&nbsp;&nbsp;&nbsp;</p>
+    <h6 class="display-1" style="font-size: 30px;">Ricordiamo che ogni parcheggio può avere massimo 50 auto.</h6>
+    <p>&nbsp;&nbsp;&nbsp;</p>
+    <table id="result_tr" class="table table-secondary">
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Località</th>
+            <th>Nome</th>
+            <th>Auto presenti</th>
+        </tr>
+        <tr *ngFor='let parcheggio of parcheggi; let i= index;'>
+            <td>{{i+1}}</td>
+            <td>{{parcheggio.idParcheggio}}</td>
+            <td>{{parcheggio.localita}}</td>
+            <td>{{parcheggio.nome_parcheggio}}</td>
+            <td>{{arrayNumCar[i]}}</td>
+        </tr>
+    </table> 
+    <p>&nbsp;&nbsp;&nbsp;</p>
+    <h2 class="display-1" style="font-size: 45px;">Vuoi aggiungere una nuova auto?</h2>
+    <h6 class="display-1" style="font-size: 30px;">Puoi scegliere una nuova targa con cui l'auto sarà registrata, oltre che il parcheggio in cui verrà consegnata.
+    </h6>
+    <p>&nbsp;&nbsp;&nbsp;</p>
+    <form>
+        <div class="form-group">
+          <label for="sceltaTarga">Scegli una targa da associare alla 500</label>
+          <input class="form-control" id="sceltaTarga" placeholder="esempio: aa111aa">
+          <label for="ImmettiId">Immetti l'ID del parcheggio di destinazione</label>
+          <input class="form-control" id="ImmettiId" placeholder="esempio: aa111aa">
+          <label for="cf">Inoltre è necessario immettere il codice fiscale erogatore</label>
+          <input class="form-control" id="cf" placeholder="Da questo erogatore verranno sottratti 1300 di budget per coprire i costi.">
+          <p>&nbsp;&nbsp;&nbsp;</p>
+          <button type="button" class="btn btn-secondary" (click)="addANewCar()">Aggiungi auto</button>
+          <p>&nbsp;&nbsp;&nbsp;</p>
+          <p>&nbsp;&nbsp;&nbsp;</p>
+        </div>    
+      </form>
+    </div>
